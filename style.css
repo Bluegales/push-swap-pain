@@ -1,0 +1,43 @@
+.grid {
+	height: 100%;
+	background: linear-gradient(0deg, rgba(100, 100, 100, 1) 0%, rgba(200, 200, 200, 1) 100%);
+	background-repeat: no-repeat;
+	padding: 40px;
+	display: grid;
+	grid-template-columns: 400px 1fr 1fr;
+	grid-template-rows: 100%;
+	justify-content: space-around;
+	column-gap: 40px;
+	justify-content: start;
+  }
+
+  .sidebar {
+	width: 100%;
+	background: linear-gradient(0deg, rgba(80, 80, 80, 1) 0%, rgba(160, 160, 160, 1) 100%);
+	float: left;
+	border: 20px;
+	border-radius: 10px;
+  }
+
+  .stackWrapper {
+	width: 100%;
+	background: rgba(100,100,100,.5);
+	padding: 5px;
+	border: 2px solid;
+	border-radius: 5px;
+  }
+
+  .stack {
+	width: 100%;
+	background: red;
+	position: relative;
+  }
+
+  .element {
+	height: 2px;
+	position: absolute;
+	background: green;
+	border: 1px solid;
+	transition: margin .2s linear;
+	transition: top .2s linear;
+  }
