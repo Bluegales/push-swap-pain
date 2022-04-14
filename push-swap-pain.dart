@@ -43,7 +43,7 @@ class Stack {
 
   int add(Element? e, bool update) {
     if (e == null) return 1;
-    _children.addLast(e);
+    _children.addFirst(e);
     print(left);
     e.style.left = left;
     if (update) updatePosition();
@@ -174,7 +174,7 @@ void addElements() {
 
   final count = numbers.length;
 
-  for (var n in numbers) {
+  for (var n in numbers.reversed) {
     HtmlElement newDiv = document.createElement("div") as HtmlElement;
     newDiv.classes.add("element");
     newDiv.style.width = ((int.parse(n) + 1) / count * 100).toString() + "%";
