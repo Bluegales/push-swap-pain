@@ -101,11 +101,11 @@ class CommandList {
     return 0;
   }
 
-  void play(Duration speed) {
+  void play(Duration speed, [int count = 1]) {
     if (finished()) reset();
     _playTimer?.cancel();
     _playTimer = Timer.periodic(
-        speed, (timer) => {if (commands.execute(1) != 0) timer.cancel()});
+        speed, (timer) => {if (commands.execute(count) != 0) timer.cancel()});
   }
 
   void pause() {
@@ -145,6 +145,12 @@ void initButtons() {
   querySelector("#cmdPlay")?.onClick.listen((event) {
     commands.play(Duration(milliseconds: 200));
   });
+  querySelector("#cmdFast")?.onClick.listen((event) {
+    commands.play(Duration(milliseconds: 200), 2);
+  });
+  querySelector("#cmdFast")?.onClick.listen((event) {
+    commands.play(Duration(milliseconds: 200), 4);
+  });
   querySelector("#cmdPause")?.onClick.listen((event) {
     commands.pause();
   });
@@ -178,7 +184,11 @@ void addElements() {
     HtmlElement newDiv = document.createElement("div") as HtmlElement;
     newDiv.classes.add("element");
     newDiv.style.width = ((int.parse(n) + 1) / count * 100).toString() + "%";
-    newDiv.style.top = (int.parse(n) * 4).toString() + "px";
+    newDiv.style.background = "hsl(" +
+        ((int.parse(n) / count * 200).floor()).toString() +
+        ", 80%, 40%)";
+    //newDiv.style.top = (int.parse(n) * 4).toString() + "px";
+    //newDiv.style.background = "red";
     stacks.append(newDiv);
     stack1.add(newDiv, false);
     stack1.updatePosition();

@@ -34,10 +34,8 @@
   }
 
   .element {
-	height: 2px;
+	height: 3px;
 	position: absolute;
-	background: green;
 	border: 1px solid;
-	transition: margin .2s linear;
-	transition: top .2s linear;
+	transition: top .2s linear, left .2s linear;
   }
