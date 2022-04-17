@@ -146,10 +146,10 @@ void initButtons() {
     commands.play(Duration(milliseconds: 200));
   });
   querySelector("#cmdFast")?.onClick.listen((event) {
-    commands.play(Duration(milliseconds: 200), 2);
-  });
-  querySelector("#cmdFast")?.onClick.listen((event) {
     commands.play(Duration(milliseconds: 200), 4);
+  });
+  querySelector("#cmdFFast")?.onClick.listen((event) {
+    commands.play(Duration(milliseconds: 200), 10);
   });
   querySelector("#cmdPause")?.onClick.listen((event) {
     commands.pause();
